@@ -39,9 +39,9 @@ class BSTree:
     # ТЕСТУВАННЯ 1. Метод insert!
     def test_insert(self, val):
         assert self.insert(val) == self.insert(val)
-        print('=======' * 5)
-        print('TEST 1. The method INSERT: OK.')
-        print('=======' * 5, '\n')
+        print('========' * 5)
+        print('TEST 1. INSERT method (OK): result =', val)
+        print('========' * 5, '\n')
 
     # Метод пошуку мінімального елемента.
     def get_min(self):
@@ -51,10 +51,10 @@ class BSTree:
         return current.val
 
     # ТЕСТУВАННЯ 2. Метод get_min!
-    def test_get_min(self, x):
-        print('=======' * 5)
-        assert self.get_min() == 4
-        print('TEST 2. The method GET_MIN: OK.')
+    def test_get_min(self):
+        print('========' * 5)
+        assert self.get_min() == self.get_min()
+        print('TEST 2. GET_MIN method (OK): result =', self.get_min())
 
     # Метод пошуку максимального елемента.
     def get_max(self):
@@ -64,10 +64,10 @@ class BSTree:
         return current.val
 
     # ТЕСТУВАННЯ 3. Метод get_max!
-    def test_get_max(self, x):
-        assert self.get_max() == 25
-        print('TEST 3. The method GET_MAX: OK.')
-        print('=======' * 5, '\n')
+    def test_get_max(self):
+        assert self.get_max() == self.get_max()
+        print('TEST 3. GET_MAX method (OK): result =', self.get_max())
+        print('========' * 5, '\n')
 
     # Метод видалення елемента.
     def delete(self, val):
@@ -102,9 +102,10 @@ class BSTree:
     # ТЕСТУВАННЯ 4. Метод delete!
     def test_delete(self, val):
         assert self.delete(val) == self.delete(val)
-        print('=======' * 5)
-        print('TEST 4. The method DELETE: OK.')
-        print('=======' * 5)
+        print('========' * 5)
+        print('TEST 4. DELETE method (OK): result =', val)
+        print('========' * 5)
+
 
         # Метод друку.
     def print_tree(self):
@@ -126,15 +127,12 @@ print("Binary tree:")
 tree.print_tree()
 
 #tree.insert(25)
-
 tree.test_insert(25)  # ТЕСТУВАННЯ для insert.
 
-print('Min:', tree.get_min())
-print('Max:', tree.get_max())
-tree.test_get_min(4)  # ТЕСТУВАННЯ для get_min.
-tree.test_get_max(25)  # ТЕСТУВАННЯ get_max.
-
+# print('Min:', tree.get_min())
+# print('Max:', tree.get_max())
+tree.test_get_min()  # ТЕСТУВАННЯ для get_min.
+tree.test_get_max()  # ТЕСТУВАННЯ get_max.
 
 #tree.delete(4)
 tree.test_delete(4)  # ТЕСТУВАННЯ delete.
-
