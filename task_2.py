@@ -3,7 +3,7 @@
 # додавання нових елементів, пошуку мін. та макс. значень і видалення елементів
 # бінарного дерева.
 
-print('--- Task 2 ---')
+print('\n--- Task 2 ---')
 
 
 # Клас Binary Search Tree
@@ -36,7 +36,7 @@ class BSTree:
         self.right = BSTree(val)
         print('\nAdded to the right:', val)
 
-    # ТЕСТУВАННЯ 1. Метод insert!
+    # ТЕСТУВАННЯ 1. Метод INSERT.
     def test_insert(self, val):
         assert self.insert(val) == self.insert(val)
         print('========' * 5)
@@ -50,7 +50,7 @@ class BSTree:
             current = current.left
         return current.val
 
-    # ТЕСТУВАННЯ 2. Метод get_min!
+    # ТЕСТУВАННЯ 2. Метод GET_MIN.
     def test_get_min(self):
         print('========' * 5)
         assert self.get_min() == self.get_min()
@@ -63,7 +63,7 @@ class BSTree:
             current = current.right
         return current.val
 
-    # ТЕСТУВАННЯ 3. Метод get_max!
+    # ТЕСТУВАННЯ 3. Метод GET_MAX.
     def test_get_max(self):
         assert self.get_max() == self.get_max()
         print('TEST 3. GET_MAX method (OK): result =', self.get_max())
@@ -99,15 +99,14 @@ class BSTree:
 
         return self
 
-    # ТЕСТУВАННЯ 4. Метод delete!
+    # ТЕСТУВАННЯ 4. Метод DELETE!
     def test_delete(self, val):
         assert self.delete(val) == self.delete(val)
         print('========' * 5)
         print('TEST 4. DELETE method (OK): result =', val)
         print('========' * 5)
 
-
-        # Метод друку.
+    # Метод друку.
     def print_tree(self):
         if self.left:
             self.left.print_tree()
@@ -126,13 +125,13 @@ tree.right.left = BSTree(23)
 print("Binary tree:")
 tree.print_tree()
 
-#tree.insert(25)
+# tree.insert(25)
 tree.test_insert(25)  # ТЕСТУВАННЯ для insert.
 
-# print('Min:', tree.get_min())
-# print('Max:', tree.get_max())
+print('Min:', tree.get_min())
+print('Max:', tree.get_max())
 tree.test_get_min()  # ТЕСТУВАННЯ для get_min.
 tree.test_get_max()  # ТЕСТУВАННЯ get_max.
 
-#tree.delete(4)
+# tree.delete(4)
 tree.test_delete(4)  # ТЕСТУВАННЯ delete.
